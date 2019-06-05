@@ -3,7 +3,13 @@ from test_framework import generic_test
 
 def can_reach_end(A):
     # TODO - you fill in here.
-    return True
+    farthest_reach_so_far, last_index = 0, len(A)-1
+    i = 0 
+
+    while i <= farthest_reach_so_far and farthest_reach_so_far < last_index:
+    	farthest_reach_so_far = max(farthest_reach_so_far, A[i] + i)
+    	i += 1
+    return farthest_reach_so_far >= last_index
 
 
 if __name__ == '__main__':
